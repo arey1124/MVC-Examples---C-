@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StpDBModelStoreContainer" CdmEntityContainer="StpDBEntities">
+    <EntitySetMapping Name="tblAuthenticates">
+      <EntityTypeMapping TypeName="StpDBModel.tblAuthenticate">
+        <MappingFragment StoreEntitySet="tblAuthenticate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSessionsDatas">
+      <EntityTypeMapping TypeName="StpDBModel.tblSessionsData">
+        <MappingFragment StoreEntitySet="tblSessionsData">
+          <ScalarProperty Name="sessionId" ColumnName="sessionId" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="loginTime" ColumnName="loginTime" />
+          <ScalarProperty Name="logoutTime" ColumnName="logoutTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStocks">
+      <EntityTypeMapping TypeName="StpDBModel.tblStock">
+        <MappingFragment StoreEntitySet="tblStocks">
+          <ScalarProperty Name="stockId" ColumnName="stockId" />
+          <ScalarProperty Name="stockName" ColumnName="stockName" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="quantity_remaining" ColumnName="quantity_remaining" />
+          <ScalarProperty Name="addedBy" ColumnName="addedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStocksHistories">
+      <EntityTypeMapping TypeName="StpDBModel.tblStocksHistory">
+        <MappingFragment StoreEntitySet="tblStocksHistory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="stockId" ColumnName="stockId" />
+          <ScalarProperty Name="openingPrice" ColumnName="openingPrice" />
+          <ScalarProperty Name="closingPrice" ColumnName="closingPrice" />
+          <ScalarProperty Name="lowPrice" ColumnName="lowPrice" />
+          <ScalarProperty Name="highPrice" ColumnName="highPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStocksPrices">
+      <EntityTypeMapping TypeName="StpDBModel.tblStocksPrice">
+        <MappingFragment StoreEntitySet="tblStocksPrice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stockId" ColumnName="stockId" />
+          <ScalarProperty Name="timeOfDay" ColumnName="timeOfDay" />
+          <ScalarProperty Name="currentPrice" ColumnName="currentPrice" />
+          <ScalarProperty Name="lowPrice" ColumnName="lowPrice" />
+          <ScalarProperty Name="highPrice" ColumnName="highPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTradeRequests">
+      <EntityTypeMapping TypeName="StpDBModel.tblTradeRequest">
+        <MappingFragment StoreEntitySet="tblTradeRequests">
+          <ScalarProperty Name="requestId" ColumnName="requestId" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="requestType" ColumnName="requestType" />
+          <ScalarProperty Name="stockId" ColumnName="stockId" />
+          <ScalarProperty Name="requestQty" ColumnName="requestQty" />
+          <ScalarProperty Name="remainingQty" ColumnName="remainingQty" />
+          <ScalarProperty Name="requestPrice" ColumnName="requestPrice" />
+          <ScalarProperty Name="requestTime" ColumnName="requestTime" />
+          <ScalarProperty Name="requestStatus" ColumnName="requestStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTransactions">
+      <EntityTypeMapping TypeName="StpDBModel.tblTransaction">
+        <MappingFragment StoreEntitySet="tblTransactions">
+          <ScalarProperty Name="transactionId" ColumnName="transactionId" />
+          <ScalarProperty Name="buyerReqId" ColumnName="buyerReqId" />
+          <ScalarProperty Name="sellerReqId" ColumnName="sellerReqId" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="StpDBModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWallets">
+      <EntityTypeMapping TypeName="StpDBModel.tblWallet">
+        <MappingFragment StoreEntitySet="tblWallet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

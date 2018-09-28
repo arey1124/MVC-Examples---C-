@@ -1,0 +1,31 @@
+﻿
+<h1>Ex4</h1>
+
+<h2>Post Back , Example - 04</h2>
+
+@{
+    string[] hobbies = { "Singing", "Dancing", "Painting", "Gaming", "Reading" };
+}
+
+@using (Html.BeginForm())
+{
+    <label for="name"> Enter Name :</label>
+    <input type="text" name="name" /> <br />
+    @:Choose Gender
+    @Html.RadioButton("gender", "Mr.", false, new { onchange = "this.form.submit()" }) @:Male
+    @Html.RadioButton("gender", "Mrs.") @:Female <br />
+
+
+    for (int i = 0; i < hobbies.Length; i++)
+    {
+        @Html.CheckBox("hobb",false,new { value = @hobbies[i]})@:@hobbies[i]<br />
+    }
+
+    <br />
+    @Html.CheckBox("cb", "true")@:Accept Terms & Services<br />
+
+
+    <input type="submit" />
+}
+
+@ViewBag.msg

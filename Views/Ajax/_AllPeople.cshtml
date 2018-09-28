@@ -1,0 +1,23 @@
+﻿@model IEnumerable<FirstMVCApp.Models.People>
+@using FirstMVCApp.Models
+
+<table border="1">
+    <tr>
+        <th>
+            PID
+        </th>
+        <th>PName</th>
+        <th>Gender</th>
+        <th>Age</th>
+    </tr>
+    @foreach (People p in @Model)
+    {
+        <tr>
+            <td>@p.Pid</td>
+            <td>@p.PName</td>
+            <td>@p.Gender</td>
+            <td>@p.Age</td>
+        </tr>
+    }
+</table>
+

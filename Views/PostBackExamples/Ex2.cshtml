@@ -1,0 +1,15 @@
+﻿
+<h1>Ex2</h1>
+
+<h2>Post Back , Example - 02</h2>
+@using (Html.BeginForm())
+{
+    <label for="num1"> Number 1 :</label>
+    <input type="text" name="num1" /> <br />
+    <label for="num2">Number 2 :</label>
+    <input type="text" name="num2" /><br />
+    <input type="submit" name="b1" value="Add" />
+    <input type="submit" name="b1" value="Sub" />
+}
+
+@ViewBag.result

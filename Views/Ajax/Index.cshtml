@@ -1,0 +1,45 @@
+﻿<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Ajax.ActionLink("Server Time", "GetServerTime","Ajax",new AjaxOptions
+    {
+        UpdateTargetId = "div1",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "Get"
+    })
+
+<div id="div1"></div>
+<br />
+<br />
+@Ajax.ActionLink("All People", "AllPeople", "Ajax",
+        new AjaxOptions
+        {
+            UpdateTargetId = "div2",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get"
+        })
+
+@Ajax.ActionLink("Male People", "MalePeople", "Ajax",
+        new AjaxOptions
+        {
+            UpdateTargetId = "div2",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get"
+        })
+@Ajax.ActionLink("Female People", "FemalePeople", "Ajax",
+        new AjaxOptions
+        {
+            UpdateTargetId = "div2",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "Get"
+        })
+
+<div id="div2">
+    hello
+</div>
+_

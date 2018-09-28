@@ -1,0 +1,161 @@
+﻿@using FirstMVCApp.Controllers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("About Page", "AboutUs", "Home") |
+
+@Html.ActionLink("Contact Page", "Contact", "Home") |
+
+@Html.ActionLink("Facilities Page", "Facilities", "Home") |
+
+@Html.ActionLink("Home Page - Mobile", "Index", "Mobile")
+
+
+@{
+    string name = "Arihant";
+    string city = "Kolkata";
+}
+<br />
+Hello @name  <br />
+Are you from @city  ? <br />
+The time is @DateTime.Now.ToLongTimeString() <br />
+The date is @DateTime.Now.ToLongDateString()
+
+<br />
+<br />
+
+
+
+@for (int i = 0; i < 10; i++)
+{
+    @i <br />
+}
+
+
+<br />
+<br />
+
+@{
+    string[] names = new string[] { "Create", "Retrive", "Update", "Delete" };
+}
+
+@for (int i = 0; i < names.Length; i++)
+{
+    <input type="button" name="name@i" value="@names[i]" />
+}
+
+
+<br />
+<br />
+
+@for (int i = 0; i < 10; i++)
+{
+    <input type="button" name="a" value=@i />
+    <input type="text" value=@i /><br />
+}
+
+<br /><br />
+
+@{
+    string[] options = new string[] { "Option 1", "Option 2", "Option 3", "Option 4" };
+}
+
+<h4>Q1 . What is your name ?</h4>
+
+@for (int i = 0; i < options.Length; i++)
+{
+    <input id=@i type="radio" name="ques1" value=@options[i] />
+    <label for=@i>@options[i]</label><br />
+}
+
+<a href=@Url.Content("../HomePage.aspx")>New Link</a>
+
+
+<h1>HTML Helpers</h1>
+
+@{
+    string msg = "Hello , World !";
+    if (IsPost)
+    {
+        msg = "Hi , Welcome Back !";
+    }
+
+}
+
+@using (Html.BeginForm())
+{
+    <input type="submit" name="name" value="button" />
+}
+
+@msg
+
+<h1>View Data</h1>
+
+Name is : @ViewData["name"].ToString()
+
+<h1>View Bag</h1>
+
+Names are : <br />
+@{
+    string[] n = ViewBag.names;
+
+}
+<ul>
+    @for (int i = 0; i < n.Length; i++)
+    {
+        <li>@n[i]</li>
+    }
+</ul>
+
+<br />Fruits are : <br />
+@{
+    List<String> fruit = ViewBag.fruits;
+
+}
+
+<table>
+    @for (int i = 0; i < fruit.Count; i++)
+    {
+        <tr><td>@fruit[i]</td></tr>
+    }
+</table>
+
+
+@{
+    List<Products> p = ViewBag.products;
+}
+
+<br /><br />
+@Html.ActionLink("Add new products", "create")
+<br /><br />
+<table>
+    <tr><th>Id</th><th>Name</th><th>Price</th><th>Quantity</th></tr>
+    @for (int i = 0; i < p.Count; i++)
+    {
+        <tr><td>@p[i].id</td><td>@Html.ActionLink(@p[i].name, "details", new { id = p[i].id })</td><td>@p[i].price</td><td>@p[i].quantity</td></tr>
+    }
+</table>
+
+<h1>Postback at Controller</h1>
+
+@using (Html.BeginForm())
+{
+    <input type="Submit" name="name" value="Button" />
+}
+
+@ViewBag.msg
+
+
+<h1>Post Back , Example - 01</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("ename", "Enter Name : ")
+    @Html.TextBox("ename") <br />
+    <input type="submit" name="name" value="Submit" />
+}
+
+@ViewBag.msg

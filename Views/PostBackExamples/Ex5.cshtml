@@ -1,0 +1,15 @@
+﻿
+<h2>Ex5</h2>
+
+@{ 
+    List<string> operations = TempData.Peek("operations") as List<string>;
+}
+
+@using (Html.BeginForm()) {
+    foreach (var op in operations)
+    {
+        <input type="submit" name="op" value=@op />
+    }
+}
+
+@ViewBag.msg

@@ -1,0 +1,9 @@
+﻿@using FirstMVCApp.Models
+
+<h2>Employee Details</h2>
+
+@model IEnumerable<Employees>
+
+@Html.Partial("EmpView",Model)
+
+@Html.Partial("EmpView",Model.Where(u=>u.id==2))

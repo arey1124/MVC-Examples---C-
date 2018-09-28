@@ -1,0 +1,20 @@
+﻿@using FirstMVCApp.Models
+@model IEnumerable<Employees>
+
+<table class="table table-bordered">
+    <tbody>
+    <th>
+    <td>Id</td>
+    <td>Name</td>
+    </th>
+    @foreach (Employees e in Model)
+    {
+        <tr>
+            <td></td>
+            <td>@e.id </td>
+            <td>@Html.ActionLink(e.name, "details", new { id = e.id }) </td>
+        </tr>
+    }
+    </tbody>
+
+</table>
